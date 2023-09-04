@@ -28,30 +28,26 @@ const HomeLayout = ({ children }) => {
             <nav className="z-10 sticky -top-px bg-white text-sm md:text-base font-medium text-black border-t border-b md:border-b-0 py-3 sm:py-4 md:py-5 -mt-px dark:bg-slate-900 dark:border-gray-800">
                 <div className="max-w-7xl snap-x w-full flex justify-between items-center px-4 sm:px-6 lg:px-8 mx-auto">
                     <div className='flex'>
-                        {/* <div className="snap-center shrink-0 pr-5 sm:pr-8 sm:last:pr-0 text-gray-700 hover:text-gray-500 dark:text-gray-400 dark:hover:text-gray-500">
-                            <Link activeClassName='bg-clip-text bg-gradient-to-l from-yellow-600 to-red-600 text-transparent dark:from-yellow-400 dark:to-red-400' className="inline-flex items-center" to="/about">Exploration</Link>
-                        </div> */}
-                        <div className="snap-center shrink-0 pr-3 sm:pr-5 md:pr-8 sm:last:pr-0 text-gray-700 hover:text-gray-500 dark:text-gray-400 dark:hover:text-gray-500">
-                            <Link activeClassName='bg-clip-text bg-gradient-to-l from-teal-600 to-yellow-500 text-transparent dark:from-teal-400 dark:to-yellow-400' className="inline-flex items-center" to="/skills">Discoveries</Link>
-                        </div>
-                        <div className="snap-center shrink-0 pr-3 sm:pr-5 md:pr-8 sm:last:pr-0 text-gray-700 hover:text-gray-500 dark:text-gray-400 dark:hover:text-gray-500">
-                            <Link activeClassName='bg-clip-text bg-gradient-to-l from-indigo-600 to-teal-500 text-transparent dark:from-indigo-600 dark:to-teal-400' className="inline-flex items-center" to="/projects">Projects</Link>
-                        </div>
-                        <div className="snap-center shrink-0 pr-3 sm:pr-5 md:pr-8 sm:last:pr-0 text-gray-700 hover:text-gray-500 dark:text-gray-400 dark:hover:text-gray-500">
-                            <Link activeClassName='bg-clip-text bg-gradient-to-l from-pink-600 to-indigo-500 text-transparent dark:from-pink-500 dark:to-indigo-600' className="inline-flex items-center" to="/experiences">Encounters</Link>
-                        </div>
-                        <div className="snap-center shrink-0 pr-3 sm:pr-5 md:pr-8 sm:last:pr-0 text-gray-800 hover:text-gray-500 dark:text-gray-400 dark:hover:text-gray-500">
-                            <a href='https://algebananazzzzz.github.io/Resume.pdf' target='blank'>
-                                <div className='inline-flex items-center gap-x-1'>
-                                    Resume
-                                    <svg className='w-3 h-3 md:w-5 md:h-5' viewBox="0 0 24 24" fill='none' stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path id="Vector" d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
+                        {PageContent.nav.map((value) => {
+                            console.log(value)
+                            if (value.active_color) {
+                                return <div className="snap-center shrink-0 pr-3 sm:pr-5 md:pr-8 sm:last:pr-0 text-gray-700 hover:text-gray-500 dark:text-gray-400 dark:hover:text-gray-500">
+                                    <Link activeClassName={`text-${value.active_color}-900 dark:text-${value.active_color}-200`} className="inline-flex items-center" to={value.to}>{value.name}</Link>
                                 </div>
-                            </a>
+                            } else {
+                                return <div className="snap-center shrink-0 pr-3 sm:pr-5 md:pr-8 sm:last:pr-0 text-gray-800 hover:text-gray-500 dark:text-gray-400 dark:hover:text-gray-500">
+                                    <a href={value.to} target='blank'>
+                                        <div className='inline-flex items-center gap-x-1'>
+                                            {value.name}
+                                            <svg className='w-3 h-3 md:w-5 md:h-5' viewBox="0 0 24 24" fill='none' stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path id="Vector" d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </div>
+                                    </a>
 
-                        </div>
-
+                                </div>
+                            }
+                        })}
                     </div>
                     <ThemeToggler theme={theme} changeTheme={changeTheme}></ThemeToggler>
                 </div>
