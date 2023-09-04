@@ -13,7 +13,7 @@
 
 ## About
 
-Nocturnal is a Portfolio template dedicated to empowering the creation of portfolio sites with React using GatsbyJS. Page content is sourced from a series of YAML files, providing the flexibility to easily update dynamic content. It simplifies the process of creating and deploying sites to AWS resources using Terraform and GitHub Actions. To see an example of this theme, visit [algebananazzzz.com](https://algebananazzzzz.com/)
+Nocturnal is a Portfolio template dedicated to empower novice developers to create portfolio sites easily! Page content is sourced from a series of YAML files, providing the flexibility to easily update dynamic content. It simplifies the process of creating and deploying sites to AWS resources using Terraform and GitHub Actions. To see an example of this theme, visit [algebananazzzz.com](https://algebananazzzzz.com/). I strongly encourage visiting [my blog](https://algebananazzzzz.com/blog/nocturnal) containing detailed information on how to configure content files.
 
 
 ## Configuration
